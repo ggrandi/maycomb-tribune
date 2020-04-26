@@ -1,3 +1,3 @@
-export const serverUrl = "http://192.168.0.158:3000";
+export const serverUrl = "https://pythonkiwi123.github.io/maycomb-tribune";
 
 export const storyUrl = serverUrl + "/static/stories.json"
