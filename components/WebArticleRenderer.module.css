@@ -1,0 +1,21 @@
+.caption {
+  color: #838383;
+  display: block;
+  height: 10pt;
+  margin-top: 0;
+}
+
+.text {
+  margin: 15px 0 15px;
+}
+
+.imageContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  max-width: 400px;
+  width: 80%;
+}

@@ -1,0 +1,25 @@
+.logo {
+  display: block;
+  height: auto;
+  max-width: 400px;
+  width: 90%;
+  margin-right: auto;
+  pointer-events: none;
+}
+
+.separator {
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+}
+
+.container {
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.logocontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
