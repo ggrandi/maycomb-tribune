@@ -1,9 +1,11 @@
 import styles from "./WebArticleRenderer.module.css";
 import ArticleRender from "./ArticleRenderer";
 
+const assetPrefix = process.env.ASSET_PREFIX
+
 const DisplayImage: React.FC<{ url: string, caption: string }> = ({ url, caption }) => (
   <div className={styles.imageContainer}>
-    <img src={url} alt={caption} className={styles.image} />
+    <img src={`${assetPrefix}${url}`} alt={caption} className={styles.image} />
     <p className={styles.caption}>{caption}</p>
   </div>
 );
