@@ -17,12 +17,10 @@ const StoryScreen = ({ navigation, route }) => {
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
         <ScrollView style={styles.articleContainer}>
-          <ImageBackground source={Images.get('finch')} style={styles.imageContainer} imageStyle={styles.image}>
-            <View style={styles.titleBack}>
-              <Text style={styles.title}>{item.name}</Text>
-            </View>
-          </ImageBackground>
+          <Text style={styles.title}>{item.name}</Text>
+          <Text style={styles.summary}>{item.summary}</Text>
           <AppArticleRenderer story={item.article} name={item.id} />
+          <View style={{ height: 40 }}></View>
         </ScrollView>
       </View>
     </>
@@ -33,7 +31,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'flex-start',
-    padding: 20,
   },
   image: {
     opacity: 1,
@@ -48,18 +45,20 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   title: {
-    fontSize: width * 0.08,
-    color: "white",
+    fontSize: width * 0.1,
+    color: "#021521",
     fontWeight: "bold",
-  },
-  titleBack: {
-    backgroundColor: "#00000014",
   },
   summary: {
     fontStyle: "italic",
+    color: "darkgrey",
+    marginBottom: 10,
   },
   articleContainer: {
-    marginTop: 20,
+    padding: 20,
+    paddingBottom: 40,
+    width: "100%",
+    height: "100%",
   },
   article: {
     marginTop: 20,
