@@ -11,7 +11,7 @@ View the app:
   Download the [Expo](https://expo.io/) app on [ios](https://apps.apple.com/us/app/expo-client/id982107779) or [android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en)
 
   Then scan this qr code on ios
-  <img src="./ios_qrcode.svg" width="50" alt="exp://pythonkiwi123.github.io/maycomb-tribune/dist/ios-index.json">
+  ![exp://pythonkiwi123.github.io/maycomb-tribune/dist/ios-index.json](ios_qrcode.svg)
   
   or this qrcode for android
-  <img src="./android_qrcode.svg" width="50" alt="exp://pythonkiwi123.github.io/maycomb-tribune/dist/android-index.json">
+  ![exp://pythonkiwi123.github.io/maycomb-tribune/dist/android-index.json](android_qrcode.svg)
