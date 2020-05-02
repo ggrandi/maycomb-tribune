@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a){return {"/":[a],"/index":[a],"/stories/[id]":["static\u002Fcss\u002F33082321ea31489cb519.css"]}}("static\u002Fcss\u002F859b2d16f5dd0fbbac22.css"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

@@ -31,7 +31,7 @@ var ArticleRender = function ArticleRender(_ref) {
       name = _ref$name === void 0 ? "" : _ref$name;
   var elems = body.split(/%%|\n/).map(function (el, i) {
     if (/^\[("|')i(\1),\s?(\1.+\1),\s?(\1.+\1)\]$/.test(el)) {
-      var _JSON$parse = JSON.parse(el.replace(/'/g, '"')),
+      var _JSON$parse = JSON.parse(el),
           _JSON$parse2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_JSON$parse, 3),
           url = _JSON$parse2[1],
           caption = _JSON$parse2[2];
@@ -74,13 +74,16 @@ var ArticleRender = function ArticleRender(_ref) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./Layout.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Layout.module.css");
+var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./Layout.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Layout.module.css");
 
-if (typeof content === 'string') {
-  content = [[module.i, content, '']];
-}
+            content = content.__esModule ? content.default : content;
 
-var options = {}
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
 
 options.insert = function(element){// These elements should always exist. If they do not,
 // this code should fail.
@@ -99,32 +102,64 @@ parentNode.insertBefore(element,anchorElement)// Remember: this is development o
 ;(self.requestAnimationFrame||setTimeout)(function(){for(var x=document.querySelectorAll('[data-next-hide-fouc]'),i=x.length;i--;){x[i].parentNode.removeChild(x[i]);}});};
 options.singleton = false;
 
-var update = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+var update = api(content, options);
 
-if (content.locals) {
-  module.exports = content.locals;
-}
 
 if (true) {
-  if (!content.locals) {
+  if (!content.locals || module.hot.invalidate) {
+    var isEqualLocals = function isEqualLocals(a, b) {
+  if (!a && b || a && !b) {
+    return false;
+  }
+
+  var p;
+
+  for (p in a) {
+    if (a[p] !== b[p]) {
+      return false;
+    }
+  }
+
+  for (p in b) {
+    if (!a[p]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+    var oldLocals = content.locals;
+
     module.hot.accept(
       /*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./Layout.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Layout.module.css",
       function () {
         var newContent = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./Layout.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/Layout.module.css");
 
-        if (typeof newContent === 'string') {
-          newContent = [[module.i, newContent, '']];
-        }
-        
-        update(newContent);
+              newContent = newContent.__esModule ? newContent.default : newContent;
+
+              if (typeof newContent === 'string') {
+                newContent = [[module.i, newContent, '']];
+              }
+
+              if (!isEqualLocals(oldLocals, newContent.locals)) {
+                module.hot.invalidate();
+
+                return;
+              }
+
+              oldLocals = newContent.locals;
+
+              update(newContent);
       }
     )
   }
 
-  module.hot.dispose(function() { 
+  module.hot.dispose(function() {
     update();
   });
 }
+
+module.exports = content.locals || {};
 
 /***/ }),
 
@@ -308,13 +343,16 @@ var Separator = function Separator() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./WebArticleRenderer.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/WebArticleRenderer.module.css");
+var api = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./WebArticleRenderer.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/WebArticleRenderer.module.css");
 
-if (typeof content === 'string') {
-  content = [[module.i, content, '']];
-}
+            content = content.__esModule ? content.default : content;
 
-var options = {}
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
 
 options.insert = function(element){// These elements should always exist. If they do not,
 // this code should fail.
@@ -333,32 +371,64 @@ parentNode.insertBefore(element,anchorElement)// Remember: this is development o
 ;(self.requestAnimationFrame||setTimeout)(function(){for(var x=document.querySelectorAll('[data-next-hide-fouc]'),i=x.length;i--;){x[i].parentNode.removeChild(x[i]);}});};
 options.singleton = false;
 
-var update = __webpack_require__(/*! ../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+var update = api(content, options);
 
-if (content.locals) {
-  module.exports = content.locals;
-}
 
 if (true) {
-  if (!content.locals) {
+  if (!content.locals || module.hot.invalidate) {
+    var isEqualLocals = function isEqualLocals(a, b) {
+  if (!a && b || a && !b) {
+    return false;
+  }
+
+  var p;
+
+  for (p in a) {
+    if (a[p] !== b[p]) {
+      return false;
+    }
+  }
+
+  for (p in b) {
+    if (!a[p]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+    var oldLocals = content.locals;
+
     module.hot.accept(
       /*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./WebArticleRenderer.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/WebArticleRenderer.module.css",
       function () {
         var newContent = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-2-1!../node_modules/next/dist/compiled/postcss-loader??__nextjs_postcss!./WebArticleRenderer.module.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/index.js?!./components/WebArticleRenderer.module.css");
 
-        if (typeof newContent === 'string') {
-          newContent = [[module.i, newContent, '']];
-        }
-        
-        update(newContent);
+              newContent = newContent.__esModule ? newContent.default : newContent;
+
+              if (typeof newContent === 'string') {
+                newContent = [[module.i, newContent, '']];
+              }
+
+              if (!isEqualLocals(oldLocals, newContent.locals)) {
+                module.hot.invalidate();
+
+                return;
+              }
+
+              oldLocals = newContent.locals;
+
+              update(newContent);
       }
     )
   }
 
-  module.hot.dispose(function() { 
+  module.hot.dispose(function() {
     update();
   });
 }
+
+module.exports = content.locals || {};
 
 /***/ }),
 
@@ -808,9 +878,11 @@ module.exports = _typeof;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".Layout_logo__1gfUS {\n  display: block;\n  height: auto;\n  max-width: 400px;\n  width: 90%;\n  margin-right: auto;\n  pointer-events: none;\n}\n\n.Layout_separator__1HU5Q {\n  width: 100%;\n  height: 2px;\n  background-color: #000000;\n}\n\n.Layout_container__oiF2U {\n  padding: 30px;\n  background-color: #ffffff;\n}\n\n.Layout_logocontainer__2pSud {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}", "",{"version":3,"sources":["/Users/giovannigrandi/Programming/maycomb-tribune/maycomb-tribune-website/components/Layout.module.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,YAAY;EACZ,gBAAgB;EAChB,UAAU;EACV,kBAAkB;EAClB,oBAAoB;AACtB;;AAEA;EACE,WAAW;EACX,WAAW;EACX,yBAAyB;AAC3B;;AAEA;EACE,aAAa;EACb,yBAAyB;AAC3B;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB","file":"Layout.module.css","sourcesContent":[".logo {\n  display: block;\n  height: auto;\n  max-width: 400px;\n  width: 90%;\n  margin-right: auto;\n  pointer-events: none;\n}\n\n.separator {\n  width: 100%;\n  height: 2px;\n  background-color: #000000;\n}\n\n.container {\n  padding: 30px;\n  background-color: #ffffff;\n}\n\n.logocontainer {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}"]}]);
+exports.push([module.i, ".Layout_logo__1gfUS {\n  display: block;\n  height: auto;\n  max-width: 400px;\n  width: 90%;\n  margin-right: auto;\n  pointer-events: none;\n}\n\n.Layout_separator__1HU5Q {\n  width: 100%;\n  height: 2px;\n  background-color: #000000;\n}\n\n.Layout_container__oiF2U {\n  padding: 30px;\n  background-color: #ffffff;\n  font-size: 12pt;\n}\n\n.Layout_logocontainer__2pSud {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}", "",{"version":3,"sources":["/Users/giovannigrandi/Programming/maycomb-tribune/maycomb-tribune-website/components/Layout.module.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,YAAY;EACZ,gBAAgB;EAChB,UAAU;EACV,kBAAkB;EAClB,oBAAoB;AACtB;;AAEA;EACE,WAAW;EACX,WAAW;EACX,yBAAyB;AAC3B;;AAEA;EACE,aAAa;EACb,yBAAyB;EACzB,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;AACzB","file":"Layout.module.css","sourcesContent":[".logo {\n  display: block;\n  height: auto;\n  max-width: 400px;\n  width: 90%;\n  margin-right: auto;\n  pointer-events: none;\n}\n\n.separator {\n  width: 100%;\n  height: 2px;\n  background-color: #000000;\n}\n\n.container {\n  padding: 30px;\n  background-color: #ffffff;\n  font-size: 12pt;\n}\n\n.logocontainer {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}"]}]);
 // Exports
 exports.locals = {
 	"logo": "Layout_logo__1gfUS",
@@ -818,6 +890,8 @@ exports.locals = {
 	"container": "Layout_container__oiF2U",
 	"logocontainer": "Layout_logocontainer__2pSud"
 };
+module.exports = exports;
+
 
 /***/ }),
 
@@ -828,7 +902,9 @@ exports.locals = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
 exports.push([module.i, ".WebArticleRenderer_caption__AV_ZV {\n  color: #838383;\n  display: block;\n  height: 10pt;\n  margin-top: 0;\n}\n\n.WebArticleRenderer_text__TZrQ9 {\n  margin: 15px 0 15px;\n}\n\n.WebArticleRenderer_imageContainer__3V3Vi {\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n}\n\n.WebArticleRenderer_image__3Am2e {\n  max-width: 400px;\n  width: 80%;\n}", "",{"version":3,"sources":["/Users/giovannigrandi/Programming/maycomb-tribune/maycomb-tribune-website/components/WebArticleRenderer.module.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,cAAc;EACd,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,gBAAgB;EAChB,UAAU;AACZ","file":"WebArticleRenderer.module.css","sourcesContent":[".caption {\n  color: #838383;\n  display: block;\n  height: 10pt;\n  margin-top: 0;\n}\n\n.text {\n  margin: 15px 0 15px;\n}\n\n.imageContainer {\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n}\n\n.image {\n  max-width: 400px;\n  width: 80%;\n}"]}]);
 // Exports
@@ -838,6 +914,8 @@ exports.locals = {
 	"imageContainer": "WebArticleRenderer_imageContainer__3V3Vi",
 	"image": "WebArticleRenderer_image__3Am2e"
 };
+module.exports = exports;
+
 
 /***/ }),
 
@@ -865,7 +943,7 @@ module.exports = function (useSourceMap) {
       var content = cssWithMappingToString(item, useSourceMap);
 
       if (item[2]) {
-        return "@media ".concat(item[2], "{").concat(content, "}");
+        return "@media ".concat(item[2], " {").concat(content, "}");
       }
 
       return content;
@@ -874,7 +952,7 @@ module.exports = function (useSourceMap) {
   // eslint-disable-next-line func-names
 
 
-  list.i = function (modules, mediaQuery) {
+  list.i = function (modules, mediaQuery, dedupe) {
     if (typeof modules === 'string') {
       // eslint-disable-next-line no-param-reassign
       modules = [[null, modules, '']];
@@ -882,30 +960,34 @@ module.exports = function (useSourceMap) {
 
     var alreadyImportedModules = {};
 
-    for (var i = 0; i < this.length; i++) {
-      // eslint-disable-next-line prefer-destructuring
-      var id = this[i][0];
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
 
-      if (id != null) {
-        alreadyImportedModules[id] = true;
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
       }
     }
 
     for (var _i = 0; _i < modules.length; _i++) {
-      var item = modules[_i]; // skip already imported module
-      // this implementation is not 100% perfect for weird media query combinations
-      // when a module is imported multiple times with different media queries.
-      // I hope this will never occur (Hey this way we have smaller bundles)
+      var item = [].concat(modules[_i]);
 
-      if (item[0] == null || !alreadyImportedModules[item[0]]) {
-        if (mediaQuery && !item[2]) {
-          item[2] = mediaQuery;
-        } else if (mediaQuery) {
-          item[2] = "(".concat(item[2], ") and (").concat(mediaQuery, ")");
-        }
-
-        list.push(item);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
       }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
     }
   };
 
@@ -924,7 +1006,7 @@ function cssWithMappingToString(item, useSourceMap) {
   if (useSourceMap && typeof btoa === 'function') {
     var sourceMapping = toComment(cssMapping);
     var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot).concat(source, " */");
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
     });
     return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
   }
@@ -942,25 +1024,28 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx!./":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx&hotRouterUpdates=true!./":
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx&hotRouterUpdates=true ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/stories/[id]", function() {
-      var mod = __webpack_require__(/*! ./pages/stories/[id].tsx */ "./pages/stories/[id].tsx")
-      if(true) {
-        module.hot.accept(/*! ./pages/stories/[id].tsx */ "./pages/stories/[id].tsx", function() {
-          if(!next.router.components["/stories/[id]"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/stories/[id].tsx */ "./pages/stories/[id].tsx")
-          next.router.update("/stories/[id]", updatedPage)
-        })
+    (window.__NEXT_P = window.__NEXT_P || []).push([
+      "/stories/[id]",
+      function () {
+        var mod = __webpack_require__(/*! ./pages/stories/[id].tsx */ "./pages/stories/[id].tsx");
+        if (true) {
+          module.hot.accept(/*! ./pages/stories/[id].tsx */ "./pages/stories/[id].tsx", function () {
+            if (!next.router.components["/stories/[id]"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/stories/[id].tsx */ "./pages/stories/[id].tsx");
+            next.router.update("/stories/[id]", updatedPage);
+          });
+        }
+        return mod;
       }
-      return mod
-    }]);
+    ]);
   
 
 /***/ }),
@@ -1281,7 +1366,7 @@ var _getPrototypeOf = __webpack_require__(/*! @babel/runtime/helpers/getPrototyp
 
 var _toConsumableArray = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
 
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -1387,8 +1472,6 @@ module.exports = (__webpack_require__(/*! dll-reference dll_2adc2403d89adc16ead0
 "use strict";
 
 
-var stylesInDom = {};
-
 var isOldIE = function isOldIE() {
   var memo;
   return function memorize() {
@@ -1429,80 +1512,69 @@ var getTarget = function getTarget() {
   };
 }();
 
-function listToStyles(list, options) {
-  var styles = [];
-  var newStyles = {};
+var stylesInDom = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDom.length; i++) {
+    if (stylesInDom[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
 
   for (var i = 0; i < list.length; i++) {
     var item = list[i];
     var id = options.base ? item[0] + options.base : item[0];
-    var css = item[1];
-    var media = item[2];
-    var sourceMap = item[3];
-    var part = {
-      css: css,
-      media: media,
-      sourceMap: sourceMap
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var index = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3]
     };
 
-    if (!newStyles[id]) {
-      styles.push(newStyles[id] = {
-        id: id,
-        parts: [part]
+    if (index !== -1) {
+      stylesInDom[index].references++;
+      stylesInDom[index].updater(obj);
+    } else {
+      stylesInDom.push({
+        identifier: identifier,
+        updater: addStyle(obj, options),
+        references: 1
       });
-    } else {
-      newStyles[id].parts.push(part);
     }
+
+    identifiers.push(identifier);
   }
 
-  return styles;
-}
-
-function addStylesToDom(styles, options) {
-  for (var i = 0; i < styles.length; i++) {
-    var item = styles[i];
-    var domStyle = stylesInDom[item.id];
-    var j = 0;
-
-    if (domStyle) {
-      domStyle.refs++;
-
-      for (; j < domStyle.parts.length; j++) {
-        domStyle.parts[j](item.parts[j]);
-      }
-
-      for (; j < item.parts.length; j++) {
-        domStyle.parts.push(addStyle(item.parts[j], options));
-      }
-    } else {
-      var parts = [];
-
-      for (; j < item.parts.length; j++) {
-        parts.push(addStyle(item.parts[j], options));
-      }
-
-      stylesInDom[item.id] = {
-        id: item.id,
-        refs: 1,
-        parts: parts
-      };
-    }
-  }
+  return identifiers;
 }
 
 function insertStyleElement(options) {
   var style = document.createElement('style');
+  var attributes = options.attributes || {};
 
-  if (typeof options.attributes.nonce === 'undefined') {
+  if (typeof attributes.nonce === 'undefined') {
     var nonce =  true ? __webpack_require__.nc : undefined;
 
     if (nonce) {
-      options.attributes.nonce = nonce;
+      attributes.nonce = nonce;
     }
   }
 
-  Object.keys(options.attributes).forEach(function (key) {
-    style.setAttribute(key, options.attributes[key]);
+  Object.keys(attributes).forEach(function (key) {
+    style.setAttribute(key, attributes[key]);
   });
 
   if (typeof options.insert === 'function') {
@@ -1540,7 +1612,7 @@ var replaceText = function replaceText() {
 }();
 
 function applyToSingletonTag(style, index, remove, obj) {
-  var css = remove ? '' : obj.css; // For old IE
+  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
 
   /* istanbul ignore if  */
 
@@ -1569,6 +1641,8 @@ function applyToTag(style, options, obj) {
 
   if (media) {
     style.setAttribute('media', media);
+  } else {
+    style.removeAttribute('media');
   }
 
   if (sourceMap && btoa) {
@@ -1626,45 +1700,43 @@ function addStyle(obj, options) {
 }
 
 module.exports = function (list, options) {
-  options = options || {};
-  options.attributes = typeof options.attributes === 'object' ? options.attributes : {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
   // tags it will allow on a page
 
   if (!options.singleton && typeof options.singleton !== 'boolean') {
     options.singleton = isOldIE();
   }
 
-  var styles = listToStyles(list, options);
-  addStylesToDom(styles, options);
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
   return function update(newList) {
-    var mayRemove = [];
+    newList = newList || [];
 
-    for (var i = 0; i < styles.length; i++) {
-      var item = styles[i];
-      var domStyle = stylesInDom[item.id];
+    if (Object.prototype.toString.call(newList) !== '[object Array]') {
+      return;
+    }
 
-      if (domStyle) {
-        domStyle.refs--;
-        mayRemove.push(domStyle);
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDom[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDom[_index].references === 0) {
+        stylesInDom[_index].updater();
+
+        stylesInDom.splice(_index, 1);
       }
     }
 
-    if (newList) {
-      var newStyles = listToStyles(newList, options);
-      addStylesToDom(newStyles, options);
-    }
-
-    for (var _i = 0; _i < mayRemove.length; _i++) {
-      var _domStyle = mayRemove[_i];
-
-      if (_domStyle.refs === 0) {
-        for (var j = 0; j < _domStyle.parts.length; j++) {
-          _domStyle.parts[j]();
-        }
-
-        delete stylesInDom[_domStyle.id];
-      }
-    }
+    lastIdentifiers = newLastIdentifiers;
   };
 };
 
@@ -1727,14 +1799,14 @@ var __N_SSG = true;
 
 /***/ }),
 
-/***/ 3:
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ 2:
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx&hotRouterUpdates=true ***!
+  \*****************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstories%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fgiovannigrandi%2FProgramming%2Fmaycomb-tribune%2Fmaycomb-tribune-website%2Fpages%2Fstories%2F%5Bid%5D.tsx&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -1750,5 +1822,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map
