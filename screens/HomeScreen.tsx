@@ -17,7 +17,7 @@ const HomeScreen = ({ navigation, route }) => {
   useEffect(() => {
     fetch(storyUrl)
       .then((response) => response.json())
-      .then((json) => { setData(json) })
+      .then((json) => setData(json))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);

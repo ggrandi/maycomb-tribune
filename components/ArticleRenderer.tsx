@@ -13,7 +13,7 @@ interface IArticleRenderer {
 const ArticleRender: React.FC<IArticleRenderer> = ({ ImageRenderer, TextRenderer, body, name = "" }) => {
   const elems = body.split(/%%|\n/).map((el, i) => {
     if (/^\[("|')i(\1),\s?(\1.+\1),\s?(\1.+\1)\]$/.test(el)) {
-      const [, url, caption] = JSON.parse(el.replace(/'/g, '"'));
+      const [, url, caption] = JSON.parse(el);
       return <ImageRenderer url={url} caption={caption} key={`${name}${i}${url}`} />;
     }
 
